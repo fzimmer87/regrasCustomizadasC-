@@ -1,0 +1,12 @@
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\bin\Debug\netcoreapp3.1\RegrasLV.deps.json
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\bin\Debug\netcoreapp3.1\RegrasLV.dll
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\bin\Debug\netcoreapp3.1\RegrasLV.pdb
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\RegrasLV.csproj.AssemblyReference.cache
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\RegrasLV.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\RegrasLV.AssemblyInfoInputs.cache
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\RegrasLV.AssemblyInfo.cs
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\RegrasLV.csproj.CoreCompileInputs.cache
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\RegrasLV.csproj.CopyComplete
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\RegrasLV.dll
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\RegrasLV.pdb
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\bin\Debug\netcoreapp3.1\LayoutValidator.CustomRuleTemplate.dll
