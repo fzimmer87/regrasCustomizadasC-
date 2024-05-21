@@ -13,9 +13,9 @@ namespace RegrasLV
         {
 			try
 			{
-                var valorBruto = double.Parse(lineValues.FieldValue["Valor_Bruto"].ToString());
-                var desconto = double.Parse(lineValues.FieldValue["Desconto"].ToString());
-                var valorLiqudo = double.Parse(lineValues.FieldValue["Valor_Liquido"].ToString());
+                var valorBruto = double.Parse(lineValues.FieldValue["VALOR_BRUTO"].ToString());
+                var desconto = double.Parse(lineValues.FieldValue["DESCONTO"].ToString());
+                var valorLiqudo = double.Parse(lineValues.FieldValue["VALOR_LIQUIDO"].ToString());
                 
 
                 var resultado = valorBruto - desconto;

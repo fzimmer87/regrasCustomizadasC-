@@ -16,16 +16,31 @@ namespace RegrasLV
         {
 			try
 			{
-                if (layoutName.ToUpper() == "Header")
+
+                if (!privateSession.ContainsKey("Quantidade Registro Lote"))
+                    privateSession.Add("Quantidade Registro Lote", 0);
+
+                if (layoutName.ToUpper() == "HEADER")
                 {
-                    var qtdRegistroLote = double.Parse(privateSession["Quantidade de registros lote"].ToString());
+                    var quantidadeRegistro = double.Parse(lineValues.FieldValue["QUANTIDADE REGISTRO LOTE"].ToString());
+                    var totalRegistroHeader = double.Parse(privateSession["QUANTIDADE REGISTRO LOTE"].ToString());
+
+                    privateSession["Quantidade Registro Lote"] = quantidadeRegistro + totalRegistroHeader;
                 }
-                if (layoutName.ToUpper() == "Trailer")
+                if (layoutName.ToUpper() == "TRAILER")
                 {
-                    var qtdRegistro = double.Parse(privateSession["Quantidade de registros"].ToString());
+                    var quantidadeRegistro = double.Parse(lineValues.FieldValue["QUANTIDADE DE REGISTROS"].ToString());
+                    var totalRegistroSomatoria = double.Parse(privateSession["Quantidade Registro Lote"].ToString());
+                    if (quantidadeRegistro != totalRegistroSomatoria )
+                    {
+                        return new CustomCodeReturn(false, $"Valor de Quantidade Registro Lote do layout Header: {quantidadeRegistro} não corresponde com Quantidade de Registros do layout Trailer: {totalRegistroSomatoria}");
+                        
+                    }
+                  
                 }
-                
-			}
+                return new CustomCodeReturn(true, "");
+
+            }
 			catch (Exception ex)
 			{
 

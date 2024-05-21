@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RegrasLV")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef341bd0935ab2dd4fb745069152fa286bc82d44")]
 [assembly: System.Reflection.AssemblyProductAttribute("RegrasLV")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RegrasLV")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

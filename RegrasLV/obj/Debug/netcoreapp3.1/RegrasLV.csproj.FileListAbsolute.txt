@@ -10,3 +10,4 @@ C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\R
 C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\RegrasLV.dll
 C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\RegrasLV.pdb
 C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\bin\Debug\netcoreapp3.1\LayoutValidator.CustomRuleTemplate.dll
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLV\obj\Debug\netcoreapp3.1\RegrasLV.sourcelink.json

@@ -15,9 +15,9 @@ namespace RegrasLVTests
             R008_ValorLiquidoCartao regra = new R008_ValorLiquidoCartao();
             CustomRuleParameter param = new CustomRuleParameter();
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("Valor Bruto", "1500");
+            param.FieldValue.Add("Valor Bruto", "1500,60");
             param.FieldValue.Add("Desconto", "200");
-            param.FieldValue.Add("Valor Liquido", "1300");
+            param.FieldValue.Add("Valor Liquido", "1301,00");
             Assert.IsTrue(regra.PerformCustomRule(param).TestResult);
         }
         [TestMethod]
@@ -37,9 +37,9 @@ namespace RegrasLVTests
             R008_ValorLiquidoCartao regra = new R008_ValorLiquidoCartao();
             CustomRuleParameter param = new CustomRuleParameter();
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("Valor Bruto", "1500");
+            param.FieldValue.Add("Valor Bruto", "1500,40");
             param.FieldValue.Add("Desconto", "0");
-            param.FieldValue.Add("Valor Liquido", "1500");
+            param.FieldValue.Add("Valor Liquido", "1500,40");
             Assert.IsTrue(regra.PerformCustomRule(param).TestResult);
 
         }

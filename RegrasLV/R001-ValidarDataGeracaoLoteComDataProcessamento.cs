@@ -14,9 +14,9 @@ namespace RegrasLV
         {
             try
             {
-                if (!DateTime.TryParseExact(lineValues.FieldValue["Data Geração Lote"].ToString(), "yyMMdd", null, System.Globalization.DateTimeStyles.None, out DateTime geracaoDoLote))
+                if (!DateTime.TryParseExact(lineValues.FieldValue["DATA GERAÇÃO LOTE"].ToString(), "ddMMyyyy", null, System.Globalization.DateTimeStyles.None, out DateTime geracaoDoLote))
                     return new CustomRuleReturn(false, $"Valor campo data geração não segue formato correto");
-               if (!DateTime.TryParseExact(lineValues.FieldValue["Data Processamento Lote"].ToString(), "yyMMdd", null, System.Globalization.DateTimeStyles.None, out DateTime dataProcessamento))
+               if (!DateTime.TryParseExact(lineValues.FieldValue["DATA PROCESSAMENTO LOTE"].ToString(), "ddMMyyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataProcessamento))
                     return new CustomRuleReturn(false, $"Valor campo data processamento não segue formato correto");
 
                 if (geracaoDoLote == dataProcessamento)

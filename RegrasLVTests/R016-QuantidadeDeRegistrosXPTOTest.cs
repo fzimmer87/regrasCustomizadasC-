@@ -21,14 +21,14 @@ namespace RegrasLVTests
 
             #region Header
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("Quantidade Registros Lote", "150");
+            param.FieldValue.Add("QUANTIDADE REGISTROS LOTE", "000");
 
             regra.PerformCustomCode(param, privateSession, publicSession, 0, 0, "Header");
             #endregion
 
             #region Trailer
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("Quantidade de Registros", "150");
+            param.FieldValue.Add("QUANTIDADE DE REGISTROS", "000");
 
             Assert.IsTrue(regra.PerformCustomCode(param, privateSession, publicSession, 0, 0, "Trailer").TestResult);
             #endregion
