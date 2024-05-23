@@ -14,9 +14,10 @@ namespace RegrasLV
         {
             try
             {
-                if (DateTime.TryParseExact(lineValues.FieldValue["Data da Transação"].ToString(), "ddMMyyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataTransacao))
+                if (!DateTime.TryParseExact(lineValues.FieldValue["DATA DA TRANSAÇÃO"].ToString(), "ddMMyyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataTransacao))
                     return new CustomRuleReturn(false,"Erro ao compilar a data da transação");
-                if (DateTime.TryParseExact(lineValues.FieldValue["Data do pagamento"].ToString(), "ddMMyyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataPagamento))
+
+                if (!DateTime.TryParseExact(lineValues.FieldValue["DATA DO PAGAMENTO"].ToString(), "ddMMyyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataPagamento))
                     return new CustomRuleReturn(false, "Erro ao compilar a data de pagamento");
 
                 if (dataTransacao >= dataPagamento)

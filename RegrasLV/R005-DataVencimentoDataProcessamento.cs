@@ -11,9 +11,9 @@ namespace RegrasLV
         {
             try
             {
-                if (!DateTime.TryParseExact(lineValues.FieldValue["Data de Vencimento"].ToString(), "ddMMyyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataVencimento))
+                if (!DateTime.TryParseExact(lineValues.FieldValue["DATA DE VENCIMENTO"].ToString(), "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataVencimento))
                     return new CustomRuleReturn(false, "Erro ao compilar a data de vencimento");
-                if (!DateTime.TryParseExact(lineValues.FieldValue["Data do Processamento"].ToString(), "ddMMyyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataProcessamento))
+                if (!DateTime.TryParseExact(lineValues.FieldValue["DATA DO PROCESSAMENTO"].ToString(), "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataProcessamento))
                     return new CustomRuleReturn(false, "Erro ao compilar a data de processamento");
                 if (dataVencimento >= dataProcessamento)
                 {

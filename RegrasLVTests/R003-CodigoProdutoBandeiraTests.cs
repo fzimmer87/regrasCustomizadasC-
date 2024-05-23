@@ -11,36 +11,58 @@ namespace RegrasLVTests
     public class R003_CodigoProdutoBandeiraTests
     {
         [TestMethod]
-        public void ValoresCorrespondentes()
+        public void ValoresCorrespondentesBandeiraElo()
         {
             R003_CodigoProdutoBandeira regra = new R003_CodigoProdutoBandeira();
             CustomRuleParameter param = new CustomRuleParameter();
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("Código do Produto", "001");
-            param.FieldValue.Add("Código da Bandeira", "001");
+            param.FieldValue.Add("CÓDIGO DO PRODUTO", "001");
+            param.FieldValue.Add("CÓDIGO DA BANDEIRA", "000");// Bandeira Elo 
             Assert.IsTrue(regra.PerformCustomRule(param).TestResult);
 
         }
         [TestMethod]
-        public void ValoresNaoCorrespondentes()
+        public void ValoresCorrespondentesBandeiraMaster()
         {
             R003_CodigoProdutoBandeira regra = new R003_CodigoProdutoBandeira();
             CustomRuleParameter param = new CustomRuleParameter();
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("Código do Produto", "002");
-            param.FieldValue.Add("Código da Bandeira", "001");
+            param.FieldValue.Add("CÓDIGO DO PRODUTO", "100");
+            param.FieldValue.Add("CÓDIGO DA BANDEIRA", "001");//Bandeira Mastercard
+            Assert.IsTrue(regra.PerformCustomRule(param).TestResult);
+
+        }
+        [TestMethod]
+        public void ValoresComCaracteresInexistentes()
+        {
+            R003_CodigoProdutoBandeira regra = new R003_CodigoProdutoBandeira();
+            CustomRuleParameter param = new CustomRuleParameter();
+            param.FieldValue = new Dictionary<string, string>();
+            param.FieldValue.Add("CÓDIGO DO PRODUTO", "001");
+            param.FieldValue.Add("CÓDIGO DA BANDEIRA", "00A");
             Assert.IsFalse(regra.PerformCustomRule(param).TestResult);
 
         }
         [TestMethod]
-        public void ValoresComCaracteres()
+        public void ValoresCorrespondentesBandeiraVisa()
         {
             R003_CodigoProdutoBandeira regra = new R003_CodigoProdutoBandeira();
             CustomRuleParameter param = new CustomRuleParameter();
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("Código do Produto", "00A");
-            param.FieldValue.Add("Código da Bandeira", "00A");
-            Assert.IsFalse(regra.PerformCustomRule(param).TestResult);
+            param.FieldValue.Add("CÓDIGO DO PRODUTO", "500");
+            param.FieldValue.Add("CÓDIGO DA BANDEIRA", "002"); //Visa
+            Assert.IsTrue(regra.PerformCustomRule(param).TestResult);
+
+        }
+        [TestMethod]
+        public void ValoresCorrespondentesBandeiraAmex()
+        {
+            R003_CodigoProdutoBandeira regra = new R003_CodigoProdutoBandeira();
+            CustomRuleParameter param = new CustomRuleParameter();
+            param.FieldValue = new Dictionary<string, string>();
+            param.FieldValue.Add("CÓDIGO DO PRODUTO", "600");
+            param.FieldValue.Add("CÓDIGO DA BANDEIRA", "003");// Bandeira Amex
+            Assert.IsTrue(regra.PerformCustomRule(param).TestResult);
 
         }
     }

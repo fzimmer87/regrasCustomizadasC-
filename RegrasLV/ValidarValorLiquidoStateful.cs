@@ -16,7 +16,7 @@ namespace RegrasLV
 
                 if (layoutName.ToUpper() == "DETALHES")
                 {
-                    var vlrLiquido = double.Parse(lineValues.FieldValue["VALOR LIQUIDO"].ToString());
+                    var vlrLiquido = double.Parse(lineValues.FieldValue["VALOR LIQUIDO"].ToString()); //pega o valor da linha
                     var totalVlrLiquido = double.Parse(privateSession["TOTAL_VLRLIQUIDO"].ToString());
                     
 

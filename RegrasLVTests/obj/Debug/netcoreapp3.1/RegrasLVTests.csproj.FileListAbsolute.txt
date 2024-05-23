@@ -99,3 +99,4 @@ C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLVTests\obj\Debug\netcoreapp
 C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLVTests\obj\Debug\netcoreapp3.1\RegrasLVTests.pdb
 C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLVTests\obj\Debug\netcoreapp3.1\RegrasLVTests.genruntimeconfig.cache
 C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLVTests\bin\Debug\netcoreapp3.1\LayoutValidator.CustomRuleTemplate.dll
+C:\Users\Fernanda Zimmer\Desktop\RegrasLV2024\RegrasLVTests\obj\Debug\netcoreapp3.1\RegrasLVTests.sourcelink.json

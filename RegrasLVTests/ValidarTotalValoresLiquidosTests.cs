@@ -53,13 +53,14 @@ namespace RegrasLVTests
             
 
             regra.PerformCustomCode(param, publicSession, privateSession, 0, 0, "DETALHES");
+
             regra.PerformCustomCode(param, publicSession, privateSession, 0, 0, "DETALHES");
             #endregion
 
             #region Trailer
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("TOTAL VALOR LIQUIDO", "2000");
-            Assert.IsTrue(regra.PerformCustomCode(param, privateSession, publicSession, 0, 0, "TRAILER").TestResult);
+            param.FieldValue.Add("TOTAL VALOR LIQUIDO", "1000");
+            Assert.IsTrue(regra.PerformCustomCode(param, publicSession, privateSession, 0, 0, "TRAILER").TestResult);
             #endregion
         }
     }

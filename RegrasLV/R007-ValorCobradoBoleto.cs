@@ -1,7 +1,5 @@
 ﻿using LayoutValidator.CustomRuleTemplate;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RegrasLV
 {
@@ -11,22 +9,23 @@ namespace RegrasLV
     {
         public CustomRuleReturn PerformCustomRule(CustomRuleParameter lineValues)
         {
-            
+
             try
             {
+                // IsNullOrWhiteSpace -> se não estiver em branco
 
-                if (!string.IsNullOrWhiteSpace(lineValues.FieldValue["Descontos/Abatimentos"].ToString()) &&
-                !string.IsNullOrWhiteSpace(lineValues.FieldValue["Juros/Multa"].ToString()) &&
-                !string.IsNullOrWhiteSpace(lineValues.FieldValue["Valor do Documento"].ToString()))
+                if (!string.IsNullOrWhiteSpace(lineValues.FieldValue["DESCONTOS/ABATIMENTOS"].ToString()) &&
+                !string.IsNullOrWhiteSpace(lineValues.FieldValue["JUROS/MULTA"].ToString()) &&
+                !string.IsNullOrWhiteSpace(lineValues.FieldValue["VALOR DO DOCUMENTO"].ToString()))
                 {
-                    if (string.IsNullOrWhiteSpace(lineValues.FieldValue["Valor cobrado"].ToString()))
+                    if (string.IsNullOrWhiteSpace(lineValues.FieldValue["VALOR COBRADO"].ToString()))
                     {
                         return new CustomRuleReturn(false, "Valor cobrado precisa estar preenchido");
                     }
-                    var valorDocumento = double.Parse(lineValues.FieldValue["Valor do Documento"].ToString());
-                    var valorJurosMulta = double.Parse(lineValues.FieldValue["Juros/Multa"].ToString());
-                    var valorDescontosAbatimentos = double.Parse(lineValues.FieldValue["Descontos/Abatimentos"].ToString());
-                    var valorCobrado = double.Parse(lineValues.FieldValue["Valor cobrado"].ToString());
+                    var valorDocumento = double.Parse(lineValues.FieldValue["VALOR DO DOCUMENTO"].ToString());
+                    var valorJurosMulta = double.Parse(lineValues.FieldValue["JUROS/MULTA"].ToString());
+                    var valorDescontosAbatimentos = double.Parse(lineValues.FieldValue["DESCONTOS/ABATIMENTOS"].ToString());
+                    var valorCobrado = double.Parse(lineValues.FieldValue["VALOR COBRADO"].ToString());
                     var resultado = valorDocumento - valorDescontosAbatimentos + valorJurosMulta;
 
 
@@ -34,7 +33,7 @@ namespace RegrasLV
                     {
                         return new CustomRuleReturn(true, "");
                     }
-                    
+
 
                 }
                 return new CustomRuleReturn(false, $"Valor cobrado não está correto");

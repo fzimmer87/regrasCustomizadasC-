@@ -1,9 +1,7 @@
 ﻿using LayoutValidator.CustomRuleTemplate;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RegrasLV;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace RegrasLVTests
 {
@@ -28,10 +26,10 @@ namespace RegrasLVTests
             R007_ValorCobradoBoleto regra = new R007_ValorCobradoBoleto();
             CustomRuleParameter param = new CustomRuleParameter();
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("Valor do Documento", "2000");
-            param.FieldValue.Add("Descontos/Abatimentos", "100");
-            param.FieldValue.Add("Juros/Multa", "");
-            param.FieldValue.Add("Valor Cobrado", "1900");
+            param.FieldValue.Add("Valor do Documento", "1000");
+            param.FieldValue.Add("Descontos/Abatimentos", "50");
+            param.FieldValue.Add("Juros/Multa", "0");
+            param.FieldValue.Add("Valor cobrado", "950");
             Assert.IsTrue(regra.PerformCustomRule(param).TestResult);
         }
         [TestMethod]
@@ -40,10 +38,10 @@ namespace RegrasLVTests
             R007_ValorCobradoBoleto regra = new R007_ValorCobradoBoleto();
             CustomRuleParameter param = new CustomRuleParameter();
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("Valor do Documento", "2000");
+            param.FieldValue.Add("Valor do Documento", "1000");
             param.FieldValue.Add("Descontos/Abatimentos", "0");
-            param.FieldValue.Add("Juros/Multa", "125");
-            param.FieldValue.Add("Valor Cobrado", "2125");
+            param.FieldValue.Add("Juros/Multa", "50");
+            param.FieldValue.Add("Valor cobrado", "1050");
             Assert.IsTrue(regra.PerformCustomRule(param).TestResult);
         }
         [TestMethod]
@@ -52,10 +50,10 @@ namespace RegrasLVTests
             R007_ValorCobradoBoleto regra = new R007_ValorCobradoBoleto();
             CustomRuleParameter param = new CustomRuleParameter();
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("Valor do Documento", "2000");
+            param.FieldValue.Add("Valor do Documento", "1000");
             param.FieldValue.Add("Descontos/Abatimentos", "0");
             param.FieldValue.Add("Juros/Multa", "0");
-            param.FieldValue.Add("Valor Cobrado", "2000");
+            param.FieldValue.Add("Valor cobrado", "1000");
             Assert.IsTrue(regra.PerformCustomRule(param).TestResult);
         }
     }
