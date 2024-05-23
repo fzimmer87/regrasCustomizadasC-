@@ -16,8 +16,8 @@ namespace RegrasLVTests
             R005_DataVencimentoDataProcessamento regras = new R005_DataVencimentoDataProcessamento();
             CustomRuleParameter param = new CustomRuleParameter();
             param.FieldValue = new Dictionary<string, string>();
-            param.FieldValue.Add("Data de Vencimento", "20062024");
-            param.FieldValue.Add("Data do Processamento", "20052024");
+            param.FieldValue.Add("Data de Vencimento", "20/06/2024");
+            param.FieldValue.Add("Data do Processamento", "20/05/2024");
             Assert.IsTrue(regras.PerformCustomRule(param).TestResult);
         }
     }
