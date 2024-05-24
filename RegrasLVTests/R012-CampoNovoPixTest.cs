@@ -32,5 +32,27 @@ namespace RegrasLVTests
             param.FieldValue.Add("Reprocessamento", "N");
             Assert.IsFalse(regra.PerformCustomRule(param).TestResult);
         }
+        [TestMethod]
+        public void CampoPixDiferenteDe0ReprocessamentoDiferenteDeN()
+        {
+            R012_CampoNovoPix regra = new R012_CampoNovoPix();
+            CustomRuleParameter param = new CustomRuleParameter();
+
+            param.FieldValue = new Dictionary<string, string>();
+            param.FieldValue.Add("NOVO ID PIX", "00001");
+            param.FieldValue.Add("REPROCESSAMENTO", "S");
+            Assert.IsTrue(regra.PerformCustomRule(param).TestResult);
+        }
+        [TestMethod]
+        public void CampoPixIguala0ReprocessamentoDiferenteDeN()
+        {
+            R012_CampoNovoPix regra = new R012_CampoNovoPix();
+            CustomRuleParameter param = new CustomRuleParameter();
+
+            param.FieldValue = new Dictionary<string, string>();
+            param.FieldValue.Add("NOVO ID PIX", "00000");
+            param.FieldValue.Add("REPROCESSAMENTO", "S");
+            Assert.IsFalse(regra.PerformCustomRule(param).TestResult);
+        }
     }
 }

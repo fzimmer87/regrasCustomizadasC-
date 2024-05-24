@@ -1,9 +1,6 @@
 ﻿using LayoutValidator.CustomRuleTemplate;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
 
 namespace RegrasLV
 {
@@ -14,8 +11,8 @@ namespace RegrasLV
     {
         public CustomCodeReturn PerformCustomCode(CustomRuleParameter lineValues, Dictionary<string, object> publicSession, Dictionary<string, object> privateSession, int lineNumber, int lineCount, string layoutName)
         {
-			try
-			{
+            try
+            {
 
                 if (!privateSession.ContainsKey("Quantidade Registro Lote"))
                     privateSession.Add("Quantidade Registro Lote", 0);
@@ -31,21 +28,21 @@ namespace RegrasLV
                 {
                     var quantidadeRegistro = double.Parse(lineValues.FieldValue["QUANTIDADE DE REGISTROS"].ToString());
                     var totalRegistroSomatoria = double.Parse(privateSession["Quantidade Registro Lote"].ToString());
-                    if (quantidadeRegistro != totalRegistroSomatoria )
+                    if (quantidadeRegistro != totalRegistroSomatoria)
                     {
                         return new CustomCodeReturn(false, $"Valor de Quantidade Registro Lote do layout Header: {quantidadeRegistro} não corresponde com Quantidade de Registros do layout Trailer: {totalRegistroSomatoria}");
-                        
+
                     }
-                  
+
                 }
                 return new CustomCodeReturn(true, "");
 
             }
-			catch (Exception ex)
-			{
+            catch (Exception ex)
+            {
 
-				return new CustomCodeReturn(false,$"Erro ao validar o arquivo{ex.Message}");
-			}
+                return new CustomCodeReturn(false, $"Erro ao validar o arquivo{ex.Message}");
+            }
         }
     }
 }

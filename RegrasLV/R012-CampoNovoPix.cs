@@ -30,10 +30,13 @@ namespace RegrasLV
                     // Verifica se o campo Novo ID PIX é composto apenas por zeros
                     if (novoIdPix.All(c => c != '0'))
                     {
-                        return new CustomRuleReturn(false, "O campo Novo ID PIX deve ser diferente de zeros quando o campo Reprocessamento tiver um valor diferente de 'N'.");
+                        return new CustomRuleReturn(true, "");
+                    }
+                    if (novoIdPix.All(c => c == '0'))
+                    {
+                        return new CustomRuleReturn(false, "Valor deve ser diferente de 0");
                     }
                 }
-
                 // Retorna verdadeiro se todas as condições forem atendidas
                 return new CustomRuleReturn(true, "");
             }
